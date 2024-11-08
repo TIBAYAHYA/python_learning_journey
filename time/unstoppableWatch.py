@@ -1,3 +1,5 @@
+"""just a stop watch that keeps track of the times between your "ENTER" key inputs, simple but effective
+"""
 import time
 print("Press ENTER to start the clock,or CTRL+C to exit")
 input()
