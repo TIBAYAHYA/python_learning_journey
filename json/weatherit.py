@@ -1,6 +1,6 @@
 import sys,requests
 import json
-OpenWeather_API_token = "2250e179ac32ebc9dde6faf74493fdbf"
+OpenWeather_API_token = input("please enter your api token \n")
 if len(sys.argv) < 2:
     location = " ".join(sys.argv[1:])
 location = "London,uk"
