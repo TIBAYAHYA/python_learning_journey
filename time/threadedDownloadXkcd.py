@@ -35,6 +35,7 @@ def download_xkcd(start_comic,end_comic):
             req = requests.get("https:%s" % comic_url) # true img download url
             req.raise_for_status()
             image_file_name = os.path.join("xkcd",os.path.basename(comic_url)) #file name yeah
+            
             image_file = open(image_file_name,"wb")#open img file in write binary mode
             for chunk in req.iter_content(100000):
                 image_file.write(chunk)
