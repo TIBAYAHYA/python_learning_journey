@@ -1,4 +1,5 @@
 """ simple code that send email to a destination email using smtplib module
+    had to add input for email and password to not expose my/user email and password
 """
 import smtplib
 conn = smtplib.SMTP('smtp.gmail.com', 587)
