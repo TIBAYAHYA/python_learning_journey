@@ -1,3 +1,8 @@
+"""this is a bunch of code I wrote as Im learning the imapclient and pyzmail libs, the libs seem complicated, there is prolly a smother alternative,
+but for now we gonna learn the hard way and experiment with this old library
+"""
+
+
 import imapclient
 conn = imapclient.IMAPClient("imap.gmail.com",ssl=True)
 email_a = input("Enter your email: ")
