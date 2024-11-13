@@ -2,6 +2,7 @@
     had to add input for email and password to not expose my/user email and password
 """
 import smtplib
+
 conn = smtplib.SMTP('smtp.gmail.com', 587)
 email = input("enter your email: ")
 password = input("enter your password: ")

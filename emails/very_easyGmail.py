@@ -2,6 +2,7 @@
 demanding an API while the other library only requires an app password, Im gonna stick to smtplib and imapclient
 """
 import smtplib
+#imaplib._MAXLINE = 10000000 # change python default size limit
 smtp_obj = smtplib.SMTP("smtp.gmail.com","587")
 smtp_obj.starttls()
 smtp_obj.login("my_email","password")
