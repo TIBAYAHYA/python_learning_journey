@@ -17,7 +17,10 @@ token = "twilio_token"
 my_number = "my_number"
 twilios_number = "twilio_number"
 from twilio.rest import Client
+message = "the actual message"
+
 
 def text_myself(message):
     twilio_client = Client(Ssid, token)
     twilio_client.messages.create(body=message, from_=twilios_number, to=my_number)
+text_myself(message)
