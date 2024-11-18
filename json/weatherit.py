@@ -9,6 +9,7 @@ url = "https://api.openweathermap.org/data/2.5/weather?q="+location+"&APPID="+Op
 response = requests.get(url)
 weather_jasoned = json.loads(response.text)
 
+
 main_weather = weather_jasoned['weather'][0]['main']
 description = weather_jasoned['weather'][0]['description']
 temperature = weather_jasoned['main']['temp']

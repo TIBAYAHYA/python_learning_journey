@@ -7,7 +7,6 @@ import imapclient
 conn = imapclient.IMAPClient("imap.gmail.com",ssl=True)
 email_a = input("Enter your email: ")
 password_a = input("Enter your password: ")
-counta = conn.login(email_a,password_a)
 conn.list_folders()  #returns a list of folder,(you dont have to constantly tell me that I have no children)
 conn.select_folder("INBOX",readonly=True)  #folder selection in read only mode
 UIDs = conn.search(["SINCE", "01-Nov-2024"])   #returns a list of email numbers that can be used below!
