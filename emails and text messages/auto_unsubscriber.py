@@ -1,7 +1,7 @@
 """this program is supposed to iterate over my entire email list, find unsubscribe links, and automaticly opens them in browser
 
 """
-exclude_domains = ["https://www.youtube.com", "https://twitter.com"]
+exclude_domains = ["https://www.youtube.com", "https://twitter.com","https://x.com","https://instagram.com"]
 import imapclient
 import webbrowser
 conn = imapclient.IMAPClient("imap.gmail.com",ssl=True)
