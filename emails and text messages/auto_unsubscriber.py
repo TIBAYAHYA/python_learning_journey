@@ -1,7 +1,7 @@
 """this program is supposed to iterate over my entire email list, find unsubscribe links, and automaticly opens them in browser
 
 """
-
+exclude_domains = ["https://www.youtube.com", "https://twitter.com"]
 import imapclient
 import webbrowser
 conn = imapclient.IMAPClient("imap.gmail.com",ssl=True)
@@ -25,9 +25,10 @@ for message_ID in messages_IDS:
         soup = bs4.BeautifulSoup(html_content,"html.parser")
         links = soup.find_all('a')
         for link in links:
+            href = link.get('href')
             if 'unsubscribe' in link.get_text().lower() or 'unsubscribe' in link.get('href', '').lower(): #checking If the html  "a" has
         #bs4ing        
-                if  not link.get('href').startswith('https://www.youtube.com'): #youtube links are not unsubscribe links 
+                if  not any(href.startswith(domain)for domain in exclude_domains): #youtube links are not unsubscribe links 
                     webbrowser.open(link.get('href'))  #opening the link in the browser
 
 
