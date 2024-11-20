@@ -15,6 +15,7 @@ conn.login(email,password)
 conn.select_folder("INBOX",readonly=False)  #INBOX folder
 start_now = datetime.datetime.now()
 formated_date = start_now.strftime("%d-%b-%Y")
+key_word = "Magito_the_idiot"
 
 
 
@@ -22,26 +23,42 @@ formated_date = start_now.strftime("%d-%b-%Y")
 initial_UIDS = conn.search(["SINCE",formated_date])
 
 
+import sys###
 
 
 
 import time,pyzmail
 def emails_checker():
-    if initial_UIDS:
-        new_uids = conn.search(["SINCE",formated_date])
-        for ini_uid in initial_UIDS:
-            new_uids.remove(ini_uid)
-    if not new_uids:
+    deleting_list = []
+    conn.select_folder("INBOX",readonly=False)
+    
+    updated_uids = conn.search(["SINCE",formated_date])
+    
+    updated_uids = [uid for uid in updated_uids if uid not in initial_UIDS]
+    
+    
+
+        
+        
+    if not updated_uids:
         print("No new emails")
         return
-    for new_uid in new_uids:
+    for new_uid in updated_uids:
         raw_msg = conn.fetch([new_uid],["BODY[]","FLAGS"])   #fetching the message
         message = pyzmail.PyzMessage.factory(raw_msg[new_uid][b"BODY[]"])#parsing the message
-        if message.html_part:
-            return
+        if not message.text_part:
+            deleting_list.append(new_uid)
+            print("No text part found")
+            continue
         email_content = message.text_part.get_payload().decode(message.text_part.charset)
-        print(email_content)
+        if key_word not in email_content:
+            deleting_list.append(new_uid)
+            print("No key word found")
+            continue
+        
+        
                 
+            
     
     
     
@@ -49,6 +66,6 @@ def emails_checker():
       
 while True:
     
-    time.sleep(900)
-    print("checking for emails") 
+    time.sleep(5)
+    
     emails_checker()
