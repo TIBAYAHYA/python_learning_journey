@@ -26,8 +26,8 @@ initial_UIDS = conn.search(["SINCE",formated_date])  #searching for emails sent 
 
 
 
-import subprocess
-
+import subprocess,os
+cwd = os.getcwd()
 import time,pyzmail
 def emails_checker():
     deleting_list = [] # a list to store the emails that will be deleted later
@@ -60,8 +60,12 @@ def emails_checker():
         #second element should be the command
         #third element should be an optional a link or Idk
         if split_email_content[1] == "torrent":
+            
+            os.chdir(r"C:\Users\maroc\OneDrive\Desktop\coding journey\automate_online-materials")
+            sub_proc_obj = subprocess.Popen("C:\\Program Files (x86)\\qBittorrent\\qbittorrent.exe",split_email_content[2])
+            sub_proc_obj.wait()   
             deleting_list.append(new_uid)
-            subprocess.Popen("C:\\Program Files (x86)\\qBittorrent\\qbittorrent.exe",split_email_content[2])
+                     
             #todo, 
             # add an actual downloable torrent file, to test the program
             #delete the email after the command is executed
