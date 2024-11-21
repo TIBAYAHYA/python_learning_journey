@@ -6,7 +6,7 @@ the program should delete emails after they are used to prevent repeating same i
 as well as send a confirmation after the instruction is executed, or the error message in case the program failed
 
 """
-#status: incomplete
+#status: working
 import imapclient,datetime
 conn = imapclient.IMAPClient("imap.gmail.com",ssl=True)
 email = input("Enter your Email: ")
@@ -25,10 +25,17 @@ initial_UIDS = conn.search(["SINCE",formated_date])  #searching for emails sent 
 
 
 
-
+### part that enables email sending
 import subprocess,os
 cwd = os.getcwd()
-import time,pyzmail
+import time,pyzmail,smtplib
+conna = smtplib.SMTP("smtp.gmail.com",587)
+conna.ehlo()
+conna.starttls()
+conna.login(email,password)
+###
+import sys
+
 def emails_checker():
     deleting_list = [] # a list to store the emails that will be deleted later
     conn.select_folder("INBOX",readonly=False) #updating the inbox folder
@@ -47,6 +54,8 @@ def emails_checker():
     for new_uid in updated_uids:
         raw_msg = conn.fetch([new_uid],["BODY[]","FLAGS"])   #fetching the message
         message = pyzmail.PyzMessage.factory(raw_msg[new_uid][b"BODY[]"])#parsing the message
+        
+
         if not message.text_part: #if email has no txt part dont check It
             print("No text part found")
             continue
@@ -54,30 +63,31 @@ def emails_checker():
         if key_word not in email_content: #if key word not found dont check it
             print("No key word found")
             continue
+        message_source = message.get_address('from') #getting the email source
         #when keyword is found, and email has a txt part, then the work starts!
         split_email_content = email_content.split("\n")
         #first element should be the keyword
         #second element should be the command
         #third element should be an optional a link or Idk
-        if split_email_content[1] == "torrent":
-            
-            os.chdir(r"C:\Users\maroc\OneDrive\Desktop\coding journey\automate_online-materials")
-            sub_proc_obj = subprocess.Popen("C:\\Program Files (x86)\\qBittorrent\\qbittorrent.exe",split_email_content[2])
-            sub_proc_obj.wait()   
-            deleting_list.append(new_uid)
-                     
-            #todo, 
-            # add an actual downloable torrent file, to test the program
-            #delete the email after the command is executed
-            # add a confirmation email that signals that the progress worked or/ finished
-            #maybe add more commands
-        
 
-                
+
+        if "torrent" in split_email_content[1] :
+            file_loc = os.path.join(r"C:\Users\maroc\OneDrive\Desktop\coding journey\automate_online-materials", split_email_content[2].strip())
+
+            sub_proc_obj = subprocess.Popen([ r"C:\Program Files\qBittorrent\qbittorrent.exe", "--sequential", "--no-splash", file_loc ])         
             
-    
-    
-    
+            sub_proc_obj.wait()   
+            conna.sendmail(email,message_source[1],f"Subject: Command Executed\n\nDownloaded the torrent file\n{split_email_content[2]}")
+            deleting_list.append(new_uid) # adding the email to be deleted
+        else:
+            conna.sendmail(email,message_source[1],f"Subject: Command Failed\n\nCommand not recognized") #sending the error message in case It fails
+            deleting_list.append(new_uid) #another deletion
+            
+    print("deleting emails")
+    conn.delete_messages(deleting_list)  #adding emails to be deleted
+    conn.expunge() #the actual deleting of the emails
+            
+        
     
       
 while True:
