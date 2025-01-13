@@ -1,0 +1,5 @@
+after smashing my head against the wall for countless hours,
+It turns out the problem is in me not knowing sheet.min_column/row exists
+and I kept on iterating using range(1,sheet.max_column)
+but nothing guarantees that the first column has an index of 1
+and so the program crashs at some point where condition is not met

@@ -1,0 +1,250 @@
+question 1:what is the capital of: Washington ?
+A-Columbia
+B-Annapolis
+C-Raleigh
+D-Olympia
+question 2:what is the capital of: Alabama ?
+A-Helena
+B-Montgomery
+C-Jackson
+D-Oklahoma City
+question 3:what is the capital of: Utah ?
+A-Oklahoma City
+B-Baton Rouge
+C-Salt Lake City
+D-Helena
+question 4:what is the capital of: Ohio ?
+A-Lansing
+B-Columbus
+C-Salem
+D-Tallahassee
+question 5:what is the capital of: Vermont ?
+A-Montpelier
+B-Concord
+C-Des Moines
+D-Jackson
+question 6:what is the capital of: Montana ?
+A-Helena
+B-Bismarck
+C-Columbus
+D-Jefferson City
+question 7:what is the capital of: Georgia ?
+A-Hartford
+B-Harrisburg
+C-Atlanta
+D-Bismarck
+question 8:what is the capital of: Louisiana ?
+A-Montgomery
+B-Baton Rouge
+C-Boise
+D-Concord
+question 9:what is the capital of: New Jersey ?
+A-Trenton
+B-Carson City
+C-Des Moines
+D-Olympia
+question 10:what is the capital of: Michigan ?
+A-Little Rock
+B-Lansing
+C-Providence
+D-Columbia
+question 11:what is the capital of: Illinois ?
+A-Augusta
+B-Springfield
+C-Annapolis
+D-Honolulu
+question 12:what is the capital of: Minnesota ?
+A-Harrisburg
+B-Saint Paul
+C-Topeka
+D-Richmond
+question 13:what is the capital of: Kansas ?
+A-Sacramento
+B-Topeka
+C-Columbus
+D-Pierre
+question 14:what is the capital of: Oregon ?
+A-Oklahoma City
+B-Salem
+C-Austin
+D-Pierre
+question 15:what is the capital of: NewMexico ?
+A-Santa Fe
+B-Indianapolis
+C-Providence
+D-Denver
+question 16:what is the capital of: Indiana ?
+A-Indianapolis
+B-Providence
+C-Montgomery
+D-Salt Lake City
+question 17:what is the capital of: South Carolina ?
+A-Salt Lake City
+B-Columbia
+C-Tallahassee
+D-Helena
+question 18:what is the capital of: Wisconsin ?
+A-Richmond
+B-Carson City
+C-Madison
+D-Lincoln
+question 19:what is the capital of: Hawaii ?
+A-Juneau
+B-Raleigh
+C-Richmond
+D-Honolulu
+question 20:what is the capital of: North Dakota ?
+A-Des Moines
+B-Tallahassee
+C-Bismarck
+D-Columbus
+question 21:what is the capital of: Rhode Island ?
+A-Providence
+B-Concord
+C-Pierre
+D-Dover
+question 22:what is the capital of: Virginia ?
+A-Concord
+B-Richmond
+C-Cheyenne
+D-Lansing
+question 23:what is the capital of: Massachusetts ?
+A-Pierre
+B-Denver
+C-Boston
+D-Madison
+question 24:what is the capital of: Maine ?
+A-Montgomery
+B-Annapolis
+C-Montpelier
+D-Augusta
+question 25:what is the capital of: Arkansas ?
+A-Little Rock
+B-Phoenix
+C-Montpelier
+D-Cheyenne
+question 26:what is the capital of: Maryland ?
+A-Dover
+B-Annapolis
+C-Oklahoma City
+D-Baton Rouge
+question 27:what is the capital of: WestVirginia ?
+A-Olympia
+B-Charleston
+C-Phoenix
+D-Madison
+question 28:what is the capital of: New Hampshire ?
+A-Concord
+B-Saint Paul
+C-Topeka
+D-Montgomery
+question 29:what is the capital of: New York ?
+A-Carson City
+B-Montgomery
+C-Albany
+D-Trenton
+question 30:what is the capital of: North Carolina ?
+A-Phoenix
+B-Pierre
+C-Raleigh
+D-Montpelier
+question 31:what is the capital of: Alaska ?
+A-Juneau
+B-Salt Lake City
+C-Austin
+D-Boise
+question 32:what is the capital of: Arizona ?
+A-Lincoln
+B-Phoenix
+C-Albany
+D-Tallahassee
+question 33:what is the capital of: Delaware ?
+A-Providence
+B-Atlanta
+C-Dover
+D-Lincoln
+question 34:what is the capital of: Kentucky ?
+A-Columbia
+B-Santa Fe
+C-Frankfort
+D-Tallahassee
+question 35:what is the capital of: Idaho ?
+A-Cheyenne
+B-Boise
+C-Austin
+D-Pierre
+question 36:what is the capital of: Connecticut ?
+A-Saint Paul
+B-Albany
+C-Hartford
+D-Harrisburg
+question 37:what is the capital of: Texas ?
+A-Denver
+B-Bismarck
+C-Austin
+D-Nashville
+question 38:what is the capital of: Iowa ?
+A-Montgomery
+B-Columbus
+C-Boise
+D-Des Moines
+question 39:what is the capital of: Missouri ?
+A-Juneau
+B-Annapolis
+C-Indianapolis
+D-Jefferson City
+question 40:what is the capital of: Tennessee ?
+A-Nashville
+B-Indianapolis
+C-Little Rock
+D-Olympia
+question 41:what is the capital of: Florida ?
+A-Tallahassee
+B-Dover
+C-Hartford
+D-Carson City
+question 42:what is the capital of: Oklahoma ?
+A-Denver
+B-Raleigh
+C-Jefferson City
+D-Oklahoma City
+question 43:what is the capital of: Colorado ?
+A-Trenton
+B-Nashville
+C-Denver
+D-Sacramento
+question 44:what is the capital of: Nebraska ?
+A-Lincoln
+B-Baton Rouge
+C-Nashville
+D-Richmond
+question 45:what is the capital of: Mississippi ?
+A-Raleigh
+B-Saint Paul
+C-Columbus
+D-Jackson
+question 46:what is the capital of: California ?
+A-Montgomery
+B-Helena
+C-Harrisburg
+D-Sacramento
+question 47:what is the capital of: South Dakota ?
+A-Providence
+B-Pierre
+C-Juneau
+D-Annapolis
+question 48:what is the capital of: Wyoming ?
+A-Richmond
+B-Cheyenne
+C-Honolulu
+D-Dover
+question 49:what is the capital of: Nevada ?
+A-Cheyenne
+B-Montgomery
+C-Carson City
+D-Hartford
+question 50:what is the capital of: Pennsylvania ?
+A-Cheyenne
+B-Saint Paul
+C-Indianapolis
+D-Harrisburg
