@@ -1,7 +1,7 @@
-#this program is designed to fill google forms based of a list of dictionaries given, this took longer than anticipated, maindly due to some problems on keystroks being faster than whats permited by google forms, 
-#and generaly any healthy program should have this limit, and so with time, I figured out that adding some wait timer is the solution for It,
-#The form have been slain!
-
+"""this program is designed to fill google forms based of a list of dictionaries given, this took longer than anticipated, maindly due to some problems on keystroks being faster than whats permited by google forms, 
+and generaly any healthy program should have this limit, and so with time, I figured out that adding some wait timer is the solution for It,
+The form have been slain!
+"""
 
 import pyautogui
 import sys
