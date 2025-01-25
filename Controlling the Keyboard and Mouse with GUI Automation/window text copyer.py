@@ -2,11 +2,13 @@
 """
 import pyautogui,pyperclip
 window_name = "New Text Document.txt - Notepad"  #title of the target window
+
 target_window = pyautogui.getWindowsWithTitle(window_name) #window objects lists
 
 target_window = target_window[0] #isolation of the window object
 
 target_window.activate()  #activating the window
+
 ###
 #some code to find the middle of the window, I know there is probably a command to straight up get the middle pixel of an opened window
 import time
