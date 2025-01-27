@@ -2,14 +2,15 @@
 25/01/2025 2:07 AM UPDATE: this project took longer than It should have, some dumb mistakes have been made by me, leading to an infinite tryal of fixing a non existent mistake, almost gave up on the whole thing,
 but thankfuly found out where the problem lays
 """
-import pyautogui,time,os,logging
+import pyautogui,time,os,logging,threading
 logging.basicConfig(level=logging.DEBUG)  
 
 #logging.disable(logging.debug)  #uncomment to disable debugs
+table_file = r"C:\Users\maroc\OneDrive\Desktop\sushi go round images\table.png"
 ingredients_folder_path = r"C:\Users\maroc\OneDrive\Desktop\sushi go round images\ingredients"
 orders_folder_path = r"C:\Users\maroc\OneDrive\Desktop\sushi go round images\orders"
 
-
+plates_coordinates = [(570,464),(710,464),(831,460),(962,462),(1091,460),(1236,460)]  #location of all plates
 
 
 #a function that consistenly trys to open the target window
@@ -18,7 +19,8 @@ orders_folder_path = r"C:\Users\maroc\OneDrive\Desktop\sushi go round images\ord
 recipes = {
     "onigiri":["rice","rice","nori"],
     "roll":["rice","nori","fish"],
-    "maki":["rice","nori","fish"]
+    "maki":["rice","nori","fish","fish"],
+    "salmon":["rice","nori","salmon","salmon"]
     
 
 }
@@ -53,7 +55,9 @@ def find_on_screen(image_fileName):
         except pyautogui.ImageNotFoundException:
             time.sleep(0.2)
             
-
+def clear_plates():
+    for plate in plates_coordinates:
+        pyautogui.click(plate)
 
 
 #this function finds the coordinates of every ingredient
@@ -110,8 +114,19 @@ def prepare_orders(to_cook_dict):
                     for singular_recipe in recipes[to_cook]:
                         pyautogui.click(ingredients_locat[singular_recipe])
                 
-                    pyautogui.click(table_location)
-                    time.sleep(1)
+
+
+                    while True:
+                        pyautogui.click(table_location)
+                        time.sleep(0.2)
+                        try:
+                            pyautogui.locateOnScreen(table_file)
+                            break
+                        except pyautogui.ImageNotFoundException:
+                            continue
+
+
+
     except AttributeError:
         time.sleep(1)
 
@@ -136,9 +151,10 @@ find_on_screen("Purple_ContinueButton.png") #first stage button
 ingredients_locat = locate_ingredients_coordinates() # a dictionary that contains every recipe's coordinates
 
 # a while loop that stores the location of table in a variable, may need to change confidence later...
+
 while True:
     try:
-        table_location = pyautogui.locateCenterOnScreen(r"C:\Users\maroc\OneDrive\Desktop\sushi go round images\table.png")
+        table_location = pyautogui.locateCenterOnScreen(table_file)
         break
     except pyautogui.ImageNotFoundException:
         logging.debug("no table was found")
@@ -146,11 +162,11 @@ while True:
 
 
 while True: #have to change this later into a conition that checks for level end (win/lose) situation
-
+    clear_plates()
     orders = take_orders()
     logging.debug(take_orders)
     prepare_orders(orders)
-    time.sleep(5)
+    time.sleep(15)
 
 
 
